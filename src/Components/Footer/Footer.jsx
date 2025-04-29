@@ -4,7 +4,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import logo from "./../../assets/Headermain/Plogo.png";
 import mmtc from "./../../assets/Headermain/mmtcpamp.png";
-import lbma from "./../../assets/Headermain/lbma1.png";
+import lbma from "./../../assets/Headermain/lbma3.png";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo(0, 0);

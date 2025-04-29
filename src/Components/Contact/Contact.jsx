@@ -1,23 +1,21 @@
 import React from "react";
-import contactBanner from "./../../assets/Contact/contact1.png";
+import contactBanner from "./../../assets/Contact/contact2.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import Header from "./../../Components/Division/Header";
 
 const Contact = () => {
   return (
     <div className="bg-[#140113] min-h-screen">
-      <Header />
+    
       
-      {/* Hero Banner */}
-      <div
-        // Background image (optional if you want later)
-        // className="w-full h-[350px] bg-cover bg-center relative"
-        // style={{ backgroundImage: `url(${contactBanner})` }}
-      >
-        {/* Optional overlay */}
-        {/* <div className="absolute inset-0 bg-black/30" /> */}
-      </div>
+     {/* Hero Banner
+<div
+  className="w-80% relative aspect-[16/6] md:aspect-[16/4] lg:aspect-[16/5] bg-cover bg-center"
+  style={{ backgroundImage: `url(${contactBanner})` }}
+>
+  <div className="absolute inset-0 bg-black/30" />
+</div> */}
 
+        
       {/* Main Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">

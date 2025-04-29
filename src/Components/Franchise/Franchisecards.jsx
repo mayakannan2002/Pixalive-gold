@@ -54,20 +54,21 @@ const FranchiseCarousel = () => {
                 OUR <span className="text-[#B98A30]">FRANCHISE</span>
             </h2>
 
-            <Swiper
-                slidesPerView={1}
-                spaceBetween={30}
-                pagination={{ clickable: true }}
-                breakpoints={{
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                }}
-                modules={[Pagination, Autoplay]}
-                autoplay={{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                }}
-                loop={true}
+             <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              modules={[Pagination, Autoplay]}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, // ⭐ Added this line
+              }}
+              loop={true}
             >
                 {franchiseData.map((card, index) => (
                     <SwiperSlide key={index}>

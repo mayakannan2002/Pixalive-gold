@@ -43,7 +43,7 @@ const GoldFeatures = () => {
   return (
     <section className="bg-white py-16 px-4 md:px-10">
       <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-12">
-        WHY CHOOSE <span className="text-yellow-600">PIXALIVE GOLD NETWORK?</span>
+        WHY CHOOSE <span className="text-[#B98A30]">PIXALIVE GOLD NETWORK?</span>
       </h2>
       <div className="max-w-5xl mx-auto space-y-10">
         {features.map((feature, index) => (

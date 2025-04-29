@@ -10,32 +10,8 @@ const Service = () => {
 
   return (
     <section className="bg-[#140113] text-white min-h-screen font-sans relative pb-20">
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-black bg-opacity-90 text-center py-6 z-40 space-y-4 absolute top-16 left-0 w-full">
-          {[
-            { name: "Home", path: "/" },
-            { name: "Services", path: "//" },
-            { name: "Divisions", path: "/divisions" },
-            { name: "Franchise", path: "/franchise" },
-            { name: "Investment Plans", path: "/investment-plans" },
-            { name: "About us", path: "/about" },
-          ].map(({ name, path }) => (
-            <Link
-              key={name}
-              to={path}
-              onClick={() => setMenuOpen(false)}
-              className="block text-white text-lg font-medium hover:text-yellow-800"
-            >
-              {name}
-            </Link>
-          ))}
-          <button className="bg-[#c73fef] hover:bg-[#a935c5] text-white px-6 py-2 rounded-full font-semibold">
-            Login/Sign up
-          </button>
-        </div>
-      )}
-
+   
+          
       {/* Hero Section */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 pt-10 md:pt-20 gap-10">
         <div className="text-center md:text-left max-w-xl space-y-6">

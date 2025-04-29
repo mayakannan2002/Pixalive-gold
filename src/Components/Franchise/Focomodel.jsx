@@ -1,122 +1,98 @@
 import React, { useState } from 'react';
-
-const AccordionItem = ({ title, content, isOpen, onClick, isRightSide }) => (
-    <div className="border-b border-gray-700 relative">
-        {/* Gold Line on Right Side Accordion when open */}
-        {isRightSide && isOpen && (
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#B98A30]"></div>
-        )}
-        <button
-            onClick={onClick}
-            className="w-full flex justify-between items-center py-4 text-left"
-        >
-            <span className="font-semibold text-white">{title}</span>
-            {/* Small Arrow */}
-            <span className="text-black text-xs ml-2">
-                {isOpen ? '▴' : '▾'}
-            </span>
-        </button>
-        {isOpen && (
-            <div className="text-white pb-4 text-sm leading-relaxed">
-                {content}
-            </div>
-        )}
-    </div>
-);
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const FranchiseAccordion = () => {
-    const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
-    const toggleAccordion = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-    const leftAccordions = [
-        {
-            title: "Established Brand Presence",
-            content: "Pixalive Gold Network is India's leading gold-centric ecosystem, trusted by major players like MMTC-PAMP and known for innovation, reliability, and collaboration across the gold industry.",
-        },
-        {
-            title: "Diverse Gold-Related Services",
-            content: "From jewelry, bullion trading, investment plans, payments, to gold loans — a complete 360° gold ecosystem under one brand.",
-        },
-        {
-            title: "Scalable Franchise Model",
-            content: "Franchise structures designed to scale: from Area to Zonal levels, adaptable to various investment and expansion goals.",
-        },
-        {
-            title: "High-Growth Industry",
-            content: "Gold demand in India offers a recession-proof, continuously growing business with strong cultural and economic significance.",
-        },
-    ];
+  const accordions = [
+    {
+      title: "Established Brand Presence",
+      content:
+        "Pixalive Gold Network is India’s leading gold-centric ecosystem, backed by trust, innovation, and collaboration with industry leaders like MMTC-PAMP.",
+    },
+    {
+      title: "Diverse Gold-Related Services",
+      content:
+        "Offer a comprehensive range of services, including buying and selling gold, gold leasing, jewelry redemption, gold loans, and gold chits, catering to every customer’s need.",
+    },
+    {
+      title: "Scalable Franchise Model",
+      content:
+        "Our FOCO (Franchise Owned, Company Operated) model ensures operational efficiency while you benefit from brand growth and customer trust.",
+    },
+    {
+      title: "High-Growth Industry",
+      content:
+        "The gold market is ever-expanding, and Pixalive’s innovative approach ensures a competitive edge in a high-demand sector.",
+    },
+    {
+      title: "Lucrative Franchise Options",
+      content:
+        "Choose from Zonal, State, District, or Area franchises, tailored to different investment levels, ensuring inclusivity for varied business scales.",
+    },
+    {
+      title: "Robust Support System",
+      content:
+        "Benefit from end-to-end support, including marketing, training, technology, and operations, ensuring franchise success from day one.",
+    },
+    {
+      title: "Digital Integration",
+      content:
+        "Leverage Pixalive’s cutting-edge digital platform to attract customers, manage services, and streamline operations effortlessly.",
+    },
+    {
+      title: "Long-Term Stability",
+      content:
+        "With a 10-year franchise period, you gain a stable, profitable, and future-ready business opportunity.",
+    },
+    
+  ];
 
-    const rightAccordions = [
-        {
-            title: "Lucrative Franchise Options",
-            content: "Choose Zonal, State, District, or Area franchises based on your investment capability, maximizing returns and scalability.",
-        },
-        {
-            title: "Robust Support System",
-            content: "Comprehensive marketing, operational, onboarding, and technology support provided to every franchise partner.",
-        },
-        {
-            title: "Digital Integration",
-            content: "Seamless digital systems for transactions, CRM, operations, and real-time gold rate updates ensure efficient management.",
-        },
-        {
-            title: "Long-Term Stability",
-            content: "With our gold ecosystem approach, your business is backed by sustainable profitability and long-term industry relevance.",
-        },
-    ];
+  const renderAccordion = (items, baseIndex) =>
+    items.map((item, index) => {
+      const currentIndex = baseIndex + index;
+      const isOpen = openIndex === currentIndex;
 
-    return (
-        <section className="bg-[#140113] px-6 md:px-20 py-16">
-            {/* FOCO MODEL Section */}
-            <div className="text-center mb-16">
-                <h3 className="text-white text-lg md:text-xl font-bold mb-4">
-                    <span className="text-[#B98A30]">FOCO</span> MODEL
-                </h3>
-                <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
-                    <span className="text-2xl text-gray-400">“</span> 
-                    We follow a <span className="font-semibold text-white">Franchise-Owned, Company-Operated (FOCO)</span> model, 
-                    where you own the franchise, and Pixalive runs the operations. 
-                    You earn a share of the revenue while we ensure quality and smooth service.
-                    <span className="text-2xl text-gray-400">”</span>
-                </p>
-            </div>
+      return (
+        <div
+          key={index}
+          className="relative border-l-4 transition-all"
+          style={{ borderColor: isOpen ? '#B98A30' : '#78716c' }}
+        >
+          <button
+            onClick={() => toggleAccordion(currentIndex)}
+            className="w-full flex justify-between items-center px-4 py-3 text-left"
+          >
+            <span className="font-semibold text-white">{item.title}</span>
+            <span className="text-white">
+              {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            </span>
+          </button>
+          {isOpen && (
+            <div className="px-4 pb-4 text-sm text-[#D4CECE]">{item.content}</div>
+          )}
+        </div>
+      );
+    });
 
-            {/* PIXALIVE GOLD NETWORK Accordions */}
-            <h2 className="text-center text-xl md:text-2xl font-bold mb-12 text-white">
-                PIXALIVE <span className="text-[#B98A30]">GOLD</span> NETWORK
-            </h2>
-            <div className="bg-[#5A5A5A] p-8 rounded-xl grid md:grid-cols-2 gap-10 relative">
-                <div className="flex flex-col gap-4">
-                    {leftAccordions.map((item, index) => (
-                        <AccordionItem
-                            key={index}
-                            title={item.title}
-                            content={item.content}
-                            isOpen={openIndex === index}
-                            onClick={() => toggleAccordion(index)}
-                            isRightSide={false} // left side
-                        />
-                    ))}
-                </div>
-                <div className="flex flex-col gap-4 relative">
-                    {rightAccordions.map((item, index) => (
-                        <AccordionItem
-                            key={index + leftAccordions.length}
-                            title={item.title}
-                            content={item.content}
-                            isOpen={openIndex === index + leftAccordions.length}
-                            onClick={() => toggleAccordion(index + leftAccordions.length)}
-                            isRightSide={true} // right side
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="bg-[#140113] px-6 md:px-20 py-16">
+      <h2 className="text-center text-xl md:text-2xl font-bold text-white mb-6">
+        PIXALIVE <span className="text-[#B98A30]">GOLD</span> NETWORK
+      </h2>
+
+      <div className="max-w-6xl mx-auto bg-[#5A5A5A] rounded-xl px-6 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6">
+          {renderAccordion(accordions.slice(0, 5), 0)}
+          {renderAccordion(accordions.slice(5), 5)}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default FranchiseAccordion;

@@ -16,7 +16,7 @@ const AboutUs = () => {
 
         {/* About Text */}
         <div className="relative px-4 sm:px-8 md:px-16">
-          <p className="text-base sm:text-lg md:text-xl italic leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl  leading-relaxed">
             <span className="text-2xl font-bold text-[#7a7a7a]">“ </span>
             <span>
               <span className="text-2xl text-white font-semibold">Pixalive Gold Network </span> 

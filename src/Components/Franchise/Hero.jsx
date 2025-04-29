@@ -16,7 +16,7 @@ const AboutUs = () => {
 
         {/* Paragraph Text */}
         <div className="relative px-4 sm:px-8 md:px-16">
-          <p className="text-base sm:text-lg md:text-xl italic leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
             <span className="text-2xl font-bold text-[#7a7a7a]">“ </span>
             Join the Pixalive Gold Network and be part of <span className="text-white font-semibold">India’s biggest gold-focused ecosystem.</span> 
             With a goal of <span className="text-white font-semibold">4,000+ branches</span>, we offer a great opportunity to grow with us in the gold investment and services space.

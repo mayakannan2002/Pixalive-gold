@@ -95,21 +95,27 @@ const CardCarousel = () => {
                 OUR <span className="text-[#B98A30]">SERVICES</span>
             </h2>
 
+           
+
+
+
+
             <Swiper
-                slidesPerView={1}
-                spaceBetween={30}
-                pagination={{ clickable: true }}
-                breakpoints={{
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                }}
-                modules={[Pagination, Autoplay]} // Add Autoplay
-                autoplay={{  // Configure autoplay
-                    delay: 1500,  // Set the delay to 1500ms (1.5 seconds)
-                    disableOnInteraction: false, // Continue autoplay even when user interacts
-                }}
-                loop={true} // Enable loop mode for continuous scrolling
-            >
+  slidesPerView={1}
+  spaceBetween={30}
+  pagination={{ clickable: true }}
+  breakpoints={{
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  }}
+  modules={[Pagination, Autoplay]}
+  autoplay={{
+    delay: 1500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true, // ⭐ Added this line
+  }}
+  loop={true}
+>
                 {cardData.map((card, index) => (
                     <SwiperSlide key={index}>
                         <div className="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between mb-8" style={{ minHeight: '480px' }}>

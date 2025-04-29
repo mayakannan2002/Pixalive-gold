@@ -22,7 +22,7 @@ const Header = () => {
         <a href="/divisions"  className="hover:underline">Divisions</a>
         <a href="/services" className="hover:underline">Services</a>
         <a href="/franchise" className="hover:underline">Franchise</a>
-        <a href="#" className="hover:underline">Gold Lease</a>
+        <a href="/goldlease" className="hover:underline">Gold Lease</a>
         <a href="/about" className="hover:underline">About us</a>
       </nav>
 
@@ -48,10 +48,10 @@ const Header = () => {
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-[#140113] text-white p-6 flex flex-col gap-4 font-medium md:hidden z-10 shadow-md">
           <a href="/"  className="hover:underline" onClick={() => setIsOpen(false)}>Home</a>
-          <a href="/divisions" className="hover:underline" onClick={() => setIsOpen(false)}>Divisions</a>
           <a href="/services" className="hover:underline" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="/divisions" className="hover:underline" onClick={() => setIsOpen(false)}>Divisions</a>
           <a href="/franchise" className="hover:underline" onClick={() => setIsOpen(false)}>Franchise</a>
-          <a href="#" className="hover:underline" onClick={() => setIsOpen(false)}>Investment Plans</a>
+          <a href="/goldlease" className="hover:underline" onClick={() => setIsOpen(false)}>Gold Lease</a>
           <a href="/about" className="hover:underline" onClick={() => setIsOpen(false)}>About us</a>
           <button
   onClick={() => navigate("/signup")}

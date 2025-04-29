@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import logo from './../../assets/logo.png';
-import backgroundImage from './../../assets/Headermain/background.png';
-import immtcLogo from './../../assets/Headermain/mmtcpamp.png';
-import lbmaLogo from './../../assets/Headermain/lbma.png';
+import backgroundImage from './../../assets/Headermain/homehero.png';
+import immtcLogo from './../../assets/Headermain/mmtc1.png';
+import lbmaLogo from './../../assets/Headermain/lbma1.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import buyIcon from './../../assets/Headermain/buy.png';
-import sellIcon from './../../assets/Headermain/buy.png';
+import sellIcon from './../../assets/Headermain/sell.png';
 import jewelleryIcon from './../../assets/Headermain/jewellery.png';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('Buy');
   const [buyMode, setBuyMode] = useState('rupees');
   const [value, setValue] = useState('');
   const goldPrice = 10200.64;
   const purity = '24k 99.99%';
-
   const navigate = useNavigate();
 
   const getConvertedValue = () => {
     if (!value) return '';
     if (buyMode === 'rupees') {
-      return `= ${(parseFloat(value) / goldPrice).toFixed(4)} gm`;
+      return `${(parseFloat(value) / goldPrice).toFixed(4)} gm`;
     }
     return `₹${(parseFloat(value) * goldPrice).toLocaleString()}`;
   };
@@ -35,78 +31,37 @@ export default function Header() {
   ];
 
   return (
+    <div className="bg-purple-900 min-h-screen">
+  <Header />
+
+
     <header
-      className="relative w-full min-h-screen text-white  before:absolute before:inset-0  before:z-0"
+      className="relative w-[94%] mx-auto mt-9 mb-9 p-4   rounded-2xl text-white shadow-lg overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        minHeight: '80vh',
       }}
     >
-      {/* Navbar */}
-      <nav className="relative z-8 flex items-center justify-between px-2 py-1 md:px-14">
-        <div className="flex items-center space-x-2">
-          <img src={logo} alt="Pixalive Gold Network" className="h-18  w-auto md:h-12 "/>
-        </div>
-        <div className="hidden md:flex space-x-12 font-bold text-1xl">
-          <a href="/" className="hover:text-white-400 hover:underline transition duration-300">Home</a>
-          <a href="/services" className="hover:text-white-400 hover:underline transition duration-300">Services</a>
-          <a href="/divisions" className="hover:text-white-400 hover:underline transition duration-300">Divisions</a>
-          <a href="/franchise" className="hover:text-white-400 hover:underline transition duration-300">Franchise</a>
-          <a href="#" className="hover:text-white-400 hover:underline transition duration-300">Gold Lease</a>
-          <a href="/about" className="hover:text-white-400 hover:underline transition duration-300">About us</a>
-        </div>
-        <button
-          onClick={() => navigate("/signup")}
-          className="hidden md:block bg-[#891F82] px-12 py-3 rounded-full font-semibold hover:bg-[#891F82] transition duration-300 ml-3 "
-        >
-          Sign up
-        </button>
-        <div className="md:hidden z-50">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="absolute top-20 left-0 w-full bg-black/80 backdrop-blur-md p-6 flex flex-col space-y-4 text-lg font-medium z-40"
-        >
-          <a href="#" className="hover:text-white-400 hover:underline">Home</a>
-          <a href="/services" className="hover:text-white-400 hover:underline">Services</a>
-          <a href="/divisions" className="hover:text-white-400 hover:underline">Divisions</a>
-          <a href="/franchise" className="hover:text-white-400 hover:underline">Franchise</a>
-          <a href="#" className="hover:text-white-400 hover:underline">Gold Lease</a>
-          <a href="/about" className="hover:text-white-400 hover:underline">About us</a>
-          <button
-            onClick={() => navigate("/signup")}
-            className="bg-[#891F82] px-2 py-2 rounded-full hover:bg-[#891F82] transition"
-          >
-            Sign up
-          </button>
-        </motion.div>
-      )}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30 z-0" />
 
       {/* Main Content */}
-      <div className="relative z-10 inset-0 flex flex-col md:flex-row items-center justify-between px-4 md:px-20 pt-20">
+      <div className="relative z-0 inset-0 flex flex-col  md:flex-row items-center justify-between px-2 md:px-6 pt-8 pb-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="p-6 md:p-10 rounded-xl text-center md:text-left md:w-1/2"
+          className="p-4 md:p-6 rounded-xl text-center md:text-left md:w-1/2"
         >
-          <h1 className="text-3xl md:text-5xl mt-0 font-semibold leading-tight">Pixalive Gold Network:</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold leading-tight">Pixalive Gold Network:</h1>
           <h2 className="text-3xl md:text-5xl font-semibold mt-4">Trusted Gold, Endless</h2>
           <h2 className="text-3xl md:text-5xl font-semibold mt-5">Possibilities</h2>
-          <p className="mt-7 text-xl md:text-2xl font-semibold">
-            "Secure Your Future with India’s First Social Gold
-            <span className='ml-2'>Network.</span>"
+          <p className="mt-6 text-xl md:text-2xl font-semibold">
+            "Secure Your Future with India’s First Social
+            <span className="ml-2">Gold Network."</span>
           </p>
           <div className="flex items-center justify-center md:justify-start space-x-6 mt-4">
             <img src={immtcLogo} alt="IMMT Logo" className="h-13 w-60" />
@@ -119,7 +74,7 @@ export default function Header() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-yellow-100 text-black rounded-xl p-6 mt-10 w-full max-w-md shadow-xl mx-auto"
+          className="bg-yellow-100 text-black rounded-lg p-3 md:p-4 mt-6 mb-6 mx-2 md:mx-4 w-full max-w-md shadow-md"
         >
           <div className="flex items-center justify-around mb-6">
             {tabs.map(({ label, icon }) => (
@@ -188,7 +143,7 @@ export default function Header() {
 
                   <button
                     onClick={() => navigate("/signup")}
-                    className="mt-4 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 rounded-lg border-2 border-purple-500"
+                    className="mt-4 w-full bg-[#b98a30] text-white font-bold py-2 rounded-lg border-2"
                   >
                     Buy Gold
                   </button>
@@ -211,7 +166,7 @@ export default function Header() {
                 </p>
                 <button
                   onClick={() => navigate("/signup")}
-                  className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full"
+                  className="bg-[#b98a30] text-white font-bold py-2 px-6 rounded-full"
                 >
                   Sell Now →
                 </button>
@@ -233,7 +188,7 @@ export default function Header() {
                 </p>
                 <button
                   onClick={() => navigate("/signup")}
-                  className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full"
+                  className="bg-[#b98a30] text-white font-bold py-2 px-6 rounded-full"
                 >
                   Sign Up →
                 </button>
@@ -243,5 +198,6 @@ export default function Header() {
         </motion.div>
       </div>
     </header>
+    </div>
   );
 }
