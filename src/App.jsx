@@ -10,6 +10,8 @@ import BlogPostPage from './Pages/Blogpage';
 import Servicesection from './Pages/Servicesection';
 import Quick from './Pages/Quick';
 import Contact from './Components/Contact/Contact'
+import Aboutsection from './Pages/Aboutsection';
+import Franchisesection from './Pages/Franchisesection';
 
 const AppContent = () => {
   const location = useLocation();
@@ -26,6 +28,8 @@ const AppContent = () => {
         <Route path="/blogpage" element={<BlogPostPage />} />
         <Route path="/services" element={<Servicesection />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<Aboutsection />} />
+        <Route path="/franchise" element={<Franchisesection />} />
       </Routes>
       {!hideFooter && <Footer />} {/* Conditionally render Footer */}
     </>

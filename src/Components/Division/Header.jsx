@@ -21,9 +21,9 @@ const Header = () => {
         <a href="/" className="hover:underline">Home</a>
         <a href="/divisions"  className="hover:underline">Divisions</a>
         <a href="/services" className="hover:underline">Services</a>
-        <a href="#" className="hover:underline">Franchise</a>
+        <a href="/franchise" className="hover:underline">Franchise</a>
         <a href="#" className="hover:underline">Gold Lease</a>
-        <a href="#" className="hover:underline">About us</a>
+        <a href="/about" className="hover:underline">About us</a>
       </nav>
 
       {/* Login/Signup Button (Hidden on small if menu is open) */}
@@ -46,16 +46,16 @@ const Header = () => {
 
       {/* Mobile Nav Dropdown */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1a001f] text-white p-6 flex flex-col gap-4 font-medium md:hidden z-10 shadow-md">
+        <div className="absolute top-full left-0 w-full bg-[#140113] text-white p-6 flex flex-col gap-4 font-medium md:hidden z-10 shadow-md">
           <a href="/"  className="hover:underline" onClick={() => setIsOpen(false)}>Home</a>
           <a href="/divisions" className="hover:underline" onClick={() => setIsOpen(false)}>Divisions</a>
           <a href="/services" className="hover:underline" onClick={() => setIsOpen(false)}>Services</a>
-          <a href="#" className="hover:underline" onClick={() => setIsOpen(false)}>Franchise</a>
+          <a href="/franchise" className="hover:underline" onClick={() => setIsOpen(false)}>Franchise</a>
           <a href="#" className="hover:underline" onClick={() => setIsOpen(false)}>Investment Plans</a>
-          <a href="#" className="hover:underline" onClick={() => setIsOpen(false)}>About us</a>
+          <a href="/about" className="hover:underline" onClick={() => setIsOpen(false)}>About us</a>
           <button
   onClick={() => navigate("/signup")}
-  className="bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 text-sm font-medium rounded-full mt-4"
+  className="bg-[#CC25BE] px-5 py-2 text-sm font-medium rounded-full mt-4"
 >
   Login/Sign up
 </button>        </div>

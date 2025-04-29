@@ -9,7 +9,7 @@ const blogs = [
     title: "The Future of Wealth: Digital Gold with Pixalive",
     description: "The Pixalive Gold Network revolutionizes gold-backed investments—secure trading, gold tokens, gold chit plans, jewelry purchases, and more.",
     image: blog1,
-    tag: "Finance",
+    
     author: "Somnath",
     date: "21 Apr 2025",
   },
@@ -17,17 +17,17 @@ const blogs = [
     title: "Empowering Communities Through Gold: Pixalive Franchises",
     description: "At Pixalive Gold Network, we believe in creating a gold-centric ecosystem that helps communities become self-reliant, empowering them through franchise ownership.",
     image: blog2,
-    tag: "Gold Investing",
-    author: "Somnath",
-    date: "21 Apr 2025",
+   
+    author: "Mayakannan C",
+    date: "25 Apr 2025",
   },
   {
     title: "A Partnership Built on Trust: Pixalive and MMTC-PAMP",
     description: "The Pixalive Gold Network is proud to partner with MMTC-PAMP, the most trusted name in gold purity and security. This collaboration redefines value assurance.",
     image: blog3,
-    tag: "Marketing",
-    author: "Somnath",
-    date: "21 Apr 2025",
+   
+    author: "Kathir",
+    date: "29 Apr 2025",
   },
 ];
 
@@ -53,10 +53,8 @@ const Blogs = () => {
             className="cursor-pointer bg-[#120016] rounded-lg overflow-hidden hover:shadow-lg transition"
           >
             <div className="relative">
-              <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
-              <span className="absolute top-2 right-2 bg-white text-xs text-black font-semibold px-2 py-1 rounded">
-                {blog.tag}
-              </span>
+              <img src={blog.image} alt={blog.title} className="w-full h-52 object-cover" />
+             
             </div>
             <div className="p-4">
               <h3 className="font-semibold text-base mb-2">{blog.title}</h3>

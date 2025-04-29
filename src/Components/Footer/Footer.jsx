@@ -4,7 +4,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import logo from "./../../assets/Headermain/Plogo.png";
 import mmtc from "./../../assets/Headermain/mmtcpamp.png";
-import lbma from "./../../assets/Headermain/lbma.png";
+import lbma from "./../../assets/Headermain/lbma1.png";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo(0, 0);
@@ -49,7 +49,7 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-gray-400">
-            <li><Link to="/" className="hover:text-white" onClick={scrollToTop}>About Us</Link></li>
+            <li><Link to="/about" className="hover:text-white" onClick={scrollToTop}>About Us</Link></li>
             <li><Link to="/faq" className="hover:text-white" onClick={scrollToTop}>FAQ</Link></li>
             <li><Link to="/" className="hover:text-white" onClick={scrollToTop}>Privacy Policy</Link></li>
             <li><Link to="/" className="hover:text-white" onClick={scrollToTop}>Refund & Cancellation Policy</Link></li>
@@ -58,26 +58,31 @@ const Footer = () => {
             <li><Link to="/blog" className="hover:text-white" onClick={scrollToTop}>Blogs</Link></li>
           </ul>
         </div>
+{/* Contact Info */}
+<div>
+  <h4 className="text-white font-semibold mb-6">
+    <Link to="/contact" className="hover:text-white" onClick={scrollToTop}>
+      Contact Us
+    </Link>
+  </h4>
 
-        {/* Contact Info */}
-        <div>
-          <h4 className="text-white font-semibold mb-4">Contact us</h4>
-          <ul className="space-y-3 text-gray-400">
-            <li className="flex justify-center md:justify-start items-center gap-2">
-              <FaPhone /> +91 87785 84566
-            </li>
-            <li className="flex justify-center md:justify-start items-center gap-2">
-              <FaEnvelope /> info@pixaliveventures.com
-            </li>
-            <li className="flex justify-center md:justify-start items-start gap-2">
-              <FaMapMarkerAlt />
-              <span>
-                Third Floor, No 35/2, Konappana Agrahara, Hosur Road, Electronics City,
-                Bengaluru, Karnataka 560100, India
-              </span>
-            </li>
-          </ul>
-        </div>
+  <ul className="space-y-3 text-gray-400">
+    <li className="flex justify-center md:justify-start items-center gap-2">
+      <FaPhone size={20} /> +91 87785 84566
+    </li>
+    <li className="flex justify-center md:justify-start items-center gap-2">
+      <FaEnvelope size={20} /> info@pixaliveventures.com
+    </li>
+    <li className="flex justify-center md:justify-start items-start gap-2">
+      <FaMapMarkerAlt size={25} />
+      <span>
+        Third Floor, No 35/2, Konappana Agrahara, Hosur Road, Electronics City,
+        Bengaluru, Karnataka 560100, India
+      </span>
+    </li>
+  </ul>
+</div>
+
 
         {/* Social Media */}
         <div>

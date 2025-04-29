@@ -53,9 +53,9 @@ export default function Header() {
           <a href="/" className="hover:text-white-400 hover:underline transition duration-300">Home</a>
           <a href="/services" className="hover:text-white-400 hover:underline transition duration-300">Services</a>
           <a href="/divisions" className="hover:text-white-400 hover:underline transition duration-300">Divisions</a>
-          <a href="#" className="hover:text-white-400 hover:underline transition duration-300">Franchise</a>
+          <a href="/franchise" className="hover:text-white-400 hover:underline transition duration-300">Franchise</a>
           <a href="#" className="hover:text-white-400 hover:underline transition duration-300">Gold Lease</a>
-          <a href="#" className="hover:text-white-400 hover:underline transition duration-300">About us</a>
+          <a href="/about" className="hover:text-white-400 hover:underline transition duration-300">About us</a>
         </div>
         <button
           onClick={() => navigate("/signup")}
@@ -81,9 +81,9 @@ export default function Header() {
           <a href="#" className="hover:text-white-400 hover:underline">Home</a>
           <a href="/services" className="hover:text-white-400 hover:underline">Services</a>
           <a href="/divisions" className="hover:text-white-400 hover:underline">Divisions</a>
-          <a href="#" className="hover:text-white-400 hover:underline">Franchise</a>
+          <a href="/franchise" className="hover:text-white-400 hover:underline">Franchise</a>
           <a href="#" className="hover:text-white-400 hover:underline">Gold Lease</a>
-          <a href="#" className="hover:text-white-400 hover:underline">About us</a>
+          <a href="/about" className="hover:text-white-400 hover:underline">About us</a>
           <button
             onClick={() => navigate("/signup")}
             className="bg-[#891F82] px-2 py-2 rounded-full hover:bg-[#891F82] transition"

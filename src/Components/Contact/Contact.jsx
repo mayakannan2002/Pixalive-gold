@@ -1,89 +1,105 @@
 import React from "react";
 import contactBanner from "./../../assets/Contact/contact1.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import Header from "./../../Components/Division/Header"
+import Header from "./../../Components/Division/Header";
 
 const Contact = () => {
   return (
-    <div>
-    <Header/>
-    <div className="w-full">
-      {/* Background Image Only (with built-in text in image) */}
+    <div className="bg-[#140113] min-h-screen">
+      <Header />
+      
+      {/* Hero Banner */}
       <div
-        className="w-full h-[350px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${contactBanner})` }}
-      />
+        // Background image (optional if you want later)
+        // className="w-full h-[350px] bg-cover bg-center relative"
+        // style={{ backgroundImage: `url(${contactBanner})` }}
+      >
+        {/* Optional overlay */}
+        {/* <div className="absolute inset-0 bg-black/30" /> */}
+      </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-semibold text-center mb-2">Let’s Start a Conversation</h2>
-        <p className="text-2xl mb-8 text-black font-semibold">Please note : all fields are required</p>
+      {/* Main Section */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
+          Let’s Start a Conversation With Us
+        </h2>
+        <p className="text-lg text-center text-[#b98a30] mb-10">
+          Please note: all fields are required
+        </p>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left: Form */}
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Contact Form */}
+          <form className="bg-[#1e0a23] p-8 shadow-lg rounded-xl space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
                 placeholder="First Name"
-                className="border border-gray-300 p-3 rounded w-full"
+                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="border border-gray-300 p-3 rounded w-full"
+                className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
               />
             </div>
             <input
               type="text"
               placeholder="Mobile Number"
-              className="border border-gray-300 p-3 rounded w-full"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
             />
             <input
               type="email"
               placeholder="Mail Id"
-              className="border border-gray-300 p-3 rounded w-full"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full"
             />
             <textarea
-              placeholder="Feed back"
-              className="border border-gray-300 p-3 rounded w-full h-32 resize-none"
+              placeholder="Feedback"
+              className="bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 p-3 rounded-lg w-full h-32 resize-none"
             />
-            <button
-              type="submit"
-              className="bg-yellow-700 hover:bg-yellow-800 text-white py-3 px-6 rounded w-fit"
-            >
-              Submit
-            </button>
+           <div className="flex justify-center">
+  <button
+    type="submit"
+    className="bg-[#B98A30] hover:bg-yellow-600 text-black font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300"
+  >
+    Submit
+  </button>
+</div>
           </form>
 
-          {/* Right: Contact Info */}
-          
-          <div className="space-y-6 text-gray-700 text-sm">
+          {/* Contact Details */}
+          <div className="flex flex-col justify-center bg-[#1e0a23] p-8 shadow-lg rounded-xl space-y-8">
             <div>
-              <p className="font-semibold mb-2">Contact us</p>
-              <p>📞 +91 87785 84566</p>
-              <p>✉️ info@pixalive.network</p>
-              <p className="mt-2">
-                📍 Third Floor, No 35/2, Konappana Agrahara,<br />
-                Hosur Road, Electronics City,<br />
+              <h3 className="text-2xl font-bold text-white mb-3">Contact Us</h3>
+              <p className="text-gray-300 mb-1">📞 +91 87785 84566</p>
+              <p className="text-gray-300 mb-1">✉️ info@pixalive.network</p>
+              <p className="text-gray-300 mt-4 leading-relaxed">
+                📍 Third Floor, No 35/2, Konappana Agrahara, <br />
+                Hosur Road, Electronics City, <br />
                 Bengaluru, Karnataka 560100, India
               </p>
             </div>
 
             <div>
-              <p className="font-semibold mb-2">Contact With us</p>
-              <div className="flex space-x-4 text-xl text-gray-700">
-                <a href="#"><FaInstagram /></a>
-                <a href="#"><FaFacebookF /></a>
-                <a href="#"><FaLinkedinIn /></a>
-                <a href="#"><FaTwitter /></a>
+              <h3 className="text-2xl font-bold text-white mb-3">Connect With Us</h3>
+              <div className="flex space-x-5 text-2xl text-[#ba8a30]">
+                <a href="#" className="hover:text-yellow-400">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="hover:text-yellow-400">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="hover:text-yellow-400">
+                  <FaLinkedinIn />
+                </a>
+                <a href="#" className="hover:text-yellow-400">
+                  <FaTwitter />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
