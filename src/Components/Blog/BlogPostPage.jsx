@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import featuredImageBase from './../../assets/Blogs/blog-1.png'; // Initial featured image
 import promoImage from './../../assets/Blogs/blog-promo.png';
-import blogThumb1 from './../../assets/Blogs/blog-2.png'; // Renamed for clarity
-import blogThumb2 from './../../assets/Blogs/blog-3.png'; // Renamed for clarity
+import blogThumb1 from './../../assets/Blogs/blog-2.png';
+import blogThumb2 from './../../assets/Blogs/blog-3.png';
 
 const BlogPostPage = () => {
-  const [featuredImage, setFeaturedImage] = useState(featuredImageBase);
+  const [featuredBlog, setFeaturedBlog] = useState({
+    title: 'The Future of Wealth: Digital Gold with Pixalive',
+    thumb: featuredImageBase,
+  });
+
   const [recentBlogs, setRecentBlogs] = useState([
     {
       title: 'Building a future with tokenized gold assets',
@@ -19,15 +23,15 @@ const BlogPostPage = () => {
 
   const handleRecentBlogClick = (index) => {
     const clickedBlog = recentBlogs[index];
-    setFeaturedImage(clickedBlog.thumb);
+    const currentFeatured = { ...featuredBlog };
 
-    // Create a new array to update recent blogs
-    const newRecentBlogs = recentBlogs.map((blog, i) => {
-      if (i === index) {
-        return { ...blog, thumb: featuredImageBase }; // Swap thumb with the original featured image
-      }
-      return blog;
-    });
+    // Update featured with clicked one
+    setFeaturedBlog(clickedBlog);
+
+    // Replace clicked with the previous featured one
+    const newRecentBlogs = [...recentBlogs];
+    newRecentBlogs[index] = currentFeatured;
+
     setRecentBlogs(newRecentBlogs);
   };
 
@@ -36,14 +40,14 @@ const BlogPostPage = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
         {/* Left Column: Blog Content */}
         <div className="lg:col-span-3">
-          <h2 className="text-2xl font-bold mb-2">The Future of Wealth: Digital Gold with Pixalive</h2>
+          <h2 className="text-2xl font-bold mb-2">{featuredBlog.title}</h2>
           <p className="text-sm text-gray-400 mb-4">by Pixalive Team | Published on Apr 20, 2025</p>
 
           {/* Featured Image */}
           <img
-            src={featuredImage}
-            alt="Digital gold illustration"
-            className="w-full md:w-2/3 lg:w-1/2 rounded-lg mb-3 mx-auto" // Added mx-auto to center the image
+            src={featuredBlog.thumb}
+            alt="Blog"
+            className="w-full md:w-2/3 lg:w-1/2 rounded-lg mb-3 mx-auto"
           />
 
           {/* Table of Contents */}

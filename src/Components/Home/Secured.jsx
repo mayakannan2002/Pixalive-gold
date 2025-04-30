@@ -14,8 +14,8 @@ const securityLogos = [
 
 const SecuredBy = () => {
   return (
-    <section className="bg-white py-12 px-4 md:px-16 text-center">
-      <h3 className="text-xl md:text-2xl font-semibold text-[#2D1D2F] mb-6">Secured by</h3>
+    <section className="bg-white py-2 px-2 md:px-16 text-center mb-8">
+      <h3 className="text-xl md:text-3xl font-semibold text-[#2D1D2F] mb-6">Secured by</h3>
       <div className="flex flex-wrap justify-center items-center gap-6">
         {securityLogos.map((logo, idx) => (
           <img

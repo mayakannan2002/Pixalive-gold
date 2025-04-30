@@ -40,9 +40,19 @@ const Divisions = () => {
             <img src={div.image} alt={div.title} className="h-36 mx-auto mb-4 object-contain" />
             <h4 className="font-semibold text-lg mb-2">{div.title}</h4>
             <p className="text-sm text-gray-700 mb-4">{div.description}</p>
-            <button className="bg-[#B98A30] text-white text-sm font-medium px-4 py-2 rounded-md">
-              KNOW MORE
-            </button>
+            <button
+  className="bg-[#B98A30] text-white text-sm font-medium px-4 py-2 rounded-md"
+  onClick={() => {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Navigate to the /division route
+    window.location.href = '/divisions';
+  }}
+>
+  KNOW MORE
+</button>
+
           </div>
         ))}
       </div>

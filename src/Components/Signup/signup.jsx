@@ -18,12 +18,13 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-[#f9f6f2] flex flex-col items-center">
       {/* Header */}
-      <div className="w-full bg-white flex items-center justify-center py-1 ">
-        <img src={logo} alt="Pixalive Gold Logo" className="h-30 w-30" />
+      <div className="w-full bg-[#f9f6f2] flex items-center justify-center  ">
+        <img src={logo} alt="Pixalive Gold Logo" className="h-50 w-50" />
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center flex-1 w-full max-w-6xl p-4">
+      <div className="flex flex-col lg:flex-row justify-center items-center flex-1 w-full max-w-5xl p-5">
         {/* Left Side - Animation & Text */}
+        
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}

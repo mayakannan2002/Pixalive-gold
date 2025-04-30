@@ -88,9 +88,35 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Contact With us</h4>
           <div className="flex justify-center md:justify-start space-x-4 text-xl text-gray-400">
-            <FaInstagram className="hover:text-white transition cursor-pointer" />
-            <FaFacebook className="hover:text-white transition cursor-pointer" />
-            <FaLinkedin className="hover:text-white transition cursor-pointer" />
+          <a
+  href="https://www.instagram.com/pixalivetech/?hl=en"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-white transition cursor-pointer"
+>
+  <FaInstagram />
+</a>
+
+          
+            
+
+<div className="flex gap-4">
+  {/* Instagram */}
+  
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/pixalivegoldnetwork/posts/?feedView=all"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-white transition cursor-pointer"
+  >
+    <FaLinkedin />
+  </a>
+</div>
+
+<FaFacebook className="hover:text-white transition cursor-pointer" />
+
             <FaTwitter className="hover:text-white transition cursor-pointer" />
           </div>
         </div>
