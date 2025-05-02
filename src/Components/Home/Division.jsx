@@ -1,29 +1,30 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Division1 from './../../assets/Division/Division-1.png';
-import Division2 from './../../assets/Division/Division-2.png';
-import Division3 from './../../assets/Division/Division-3.png';
+import Division1 from './../../assets/Division/Rectangle 1.png';
+import Division2 from './../../assets/Division/Rectangle 2.png';
+import Division3 from './../../assets/Division/Rectangle 3.png';
 
 const divisions = [
   {
     title: 'Pixalive Gold Network',
     image: Division1,
     description:
-      'Reimagining traditional savings with the Pixalive Gold Network revolutionizes gold ownership with services like digital gold investment, gold loans, jewelry purchases, and gold-backed everyday transactions.',
+      'Pixalive Gold Network seamlessly connects digital gold investments with premium physical jewelry. Users can convert digital gold into high-quality, artisan-crafted pieces or rent exquisite gold jewelry for special occasions. The platform ensures authenticity, customization, and convenience, backed by trusted brand partnerships.',
   },
   {
     title: 'Pixalive Shopping Network',
     image: Division2,
     description:
-      'A unique e-commerce platform integrated with Pixalive Network, onboarding multiple D2C brands to offer quality products at the right price. Users can convert their earned rewards or money from Pixalive Network into products.',
+      'Pixalive Shopping Network is a B2C platform that allows users to shop a wide range of products and pay using digital gold. It offers a secure, user-friendly shopping experience with top brands, exclusive deals, and the convenience of gold-based payments.',
   },
   {
     title: 'Pixalive Grocery Network',
     image: Division3,
     description:
-      'The Pixalive Grocery Network is a unique platform that brings grocery stores together under one brand and offers franchise opportunities. Users can use the gold in their Pixalive wallet to buy groceries.',
+      'Pixalive Grocery Network is a unique platform that brings grocery stores under one umbrella and offers franchise opportunities. Users can conveniently use gold from their Pixalive wallet to purchase daily essentials, blending traditional retail with digital finance.',
   },
 ];
+
 
 const Divisions = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const Divisions = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Navigate to the /division route
-    window.location.href = '/divisions';
+    window.location.href = '/divisionpage';
   }}
 >
   KNOW MORE

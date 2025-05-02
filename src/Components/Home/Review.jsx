@@ -69,27 +69,26 @@ const CustomerReview = () => {
   };
 
   return (
-    <section className="bg-[#140113] text-white py-16 px-6 md:px-20 text-center relative">
-      <p className="text-gray-400 text-lg">What our customers have to say</p>
-      <h2 className="text-3xl md:text-4xl font-bold mb-10">Customer review</h2>
+    <section className="bg-[#140113] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-20 text-center relative">
+      <p className="text-gray-400 text-base sm:text-lg mb-2">What our customers have to say</p>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10">Customer Review</h2>
 
-      {/* Full-width slider container with relative positioning */}
       <div className="max-w-3xl mx-auto relative">
         <Slider {...settings} ref={sliderRef}>
           {reviews.map((r, idx) => (
             <div key={idx}>
-              <p className="text-lg md:text-xl leading-relaxed mb-8">"{r.review}"</p>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 px-2 sm:px-6">"{r.review}"</p>
               <div className="flex flex-col items-center">
                 <img
                   src={r.image}
                   alt={r.name}
-                  className="w-14 h-14 rounded-full mb-2 object-cover"
+                  className="w-16 sm:w-20 h-16 sm:h-20 rounded-full mb-2 object-cover"
                 />
-                <p className="font-semibold text-lg">{r.name}</p>
+                <p className="font-semibold text-base sm:text-lg">{r.name}</p>
                 <p className="text-sm text-gray-400">{r.location}</p>
                 <div className="flex gap-1 mt-2">
                   {[...Array(4)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                    <span key={i} className="text-yellow-400 text-lg sm:text-xl">★</span>
                   ))}
                 </div>
               </div>
@@ -101,12 +100,11 @@ const CustomerReview = () => {
   );
 };
 
-// Arrow components placed relative to full container
 function SampleNextArrow(props) {
   return (
     <div
       onClick={props.onClick}
-      className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+      className="absolute right-2 sm:-right-8 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-3xl cursor-pointer z-20"
     >
       ❯
     </div>
@@ -117,7 +115,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       onClick={props.onClick}
-      className="absolute -left-8 top-1/2 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+      className="absolute left-2 sm:-left-8 top-1/2 transform -translate-y-1/2 text-white text-2xl sm:text-3xl cursor-pointer z-20"
     >
       ❮
     </div>

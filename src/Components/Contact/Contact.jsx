@@ -202,9 +202,24 @@ const Contact = () => {
             <div>
               <h3 className="text-3xl font-bold text-white mb-3">Connect With Us</h3>
               <div className="flex space-x-5 text-2xl text-[#ba8a30]">
-                <a href="#" className="hover:text-[#ba8a30]"><FaInstagram /></a>
+              <a
+        href="[https://www.instagram.com/pixalivetech/?hl=en](https://www.instagram.com/pixalivetech/?hl=en)"
+        className="hover:text-[#ba8a30]"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram />
+      </a>
+     
+      <a
+        href="[https://www.linkedin.com/company/pixalivegoldnetwork/posts/?feedView=all](https://www.linkedin.com/company/pixalivegoldnetwork/posts/?feedView=all)"
+        className="hover:text-[#ba8a30]"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedinIn />
+      </a>
                 <a href="#" className="hover:text-[#ba8a30]"><FaFacebookF /></a>
-                <a href="#" className="hover:text-[#ba8a30]"><FaLinkedinIn /></a>
                 <a href="#" className="hover:text-[#ba8a30]"><FaTwitter /></a>
               </div>
             </div>

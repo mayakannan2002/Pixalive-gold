@@ -1,23 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from './../../assets/Headermain/homehero.png';
 import immtcLogo from './../../assets/Headermain/mmtc1.png';
 import lbmaLogo from './../../assets/Headermain/lbma2.png';
+import immtcLogoMobile from './../../assets/Headermain/mmtc1.png'; // Import mobile logo
+import lbmaLogoMobile from './../../assets/Headermain/lbma2.png';     // Import mobile logo
 import { motion, AnimatePresence } from 'framer-motion';
 import buyIcon from './../../assets/Headermain/buy.png';
 import sellIcon from './../../assets/Headermain/sell2.png';
 import jewelleryIcon from './../../assets/Headermain/jewellery.png';
+import axios from 'axios'; // Import axios
 
 export default function Header() {
   const [activeTab, setActiveTab] = useState('Buy');
   const [buyMode, setBuyMode] = useState('rupees');
   const [value, setValue] = useState('');
-  const goldPrice = 10200.64;
+  const [goldPrice, setGoldPrice] = useState(null);
   const purity = '24k 99.99%';
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const fetchGoldPrice = async () => {
+      try {
+        const config = {
+          method: 'get',
+          maxBodyLength: Infinity,
+          url: 'https://gold.g.apised.com/v1/latest?metals=XAU,XAG,XPT,XPD&base_currency=KWD&currencies=EUR,KWD,GBP,USD&weight_unit=gram',
+          headers: {
+            'x-api-key': 'sk_7d609e0a091aEc79113eEb79e1E16dF6cA6c8524A964148d'
+          }
+        };
+
+        const response = await axios.request(config);
+        const pricePerGram = response.data.data.XAU.USD;
+        setGoldPrice(pricePerGram);
+      } catch (error) {
+        console.error('Error fetching gold price:', error);
+      }
+    };
+
+    fetchGoldPrice();
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Define mobile breakpoint as 768px
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const getConvertedValue = () => {
-    if (!value || isNaN(parseFloat(value))) return '';
+    if (!value || isNaN(parseFloat(value)) || !goldPrice) return '';
     if (buyMode === 'rupees') {
       return `${(parseFloat(value) / goldPrice).toFixed(4)} gm`;
     }
@@ -31,13 +66,12 @@ export default function Header() {
   ];
 
   return (
-    <div className="relative w-full    px-4 pb-4 pt-0 bg-[#140113]">
-
+    <div className="relative w-full px-4 pb-4 pt-0 bg-[#140113]">
       {/* Purple border on bottom, left, and right */}
       <div className="absolute inset-0 border-b-8 border-l-8 border-r-8 border-[#140113] rounded-2xl pointer-events-none z-[-1]" />
 
       <header
-        className="relative w-[94%] mx-auto  p-2 rounded-2xl mb-4 text-white shadow-lg overflow-hidden"
+        className="relative w-[94%] mx-auto p-2 rounded-2xl mb-4 text-white shadow-lg overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url(${backgroundImage})`,
           backgroundSize: 'cover',
@@ -62,8 +96,17 @@ export default function Header() {
               <span className="ml-2">Gold Network."</span>
             </p>
             <div className="flex items-center justify-center md:justify-start space-x-6 mt-4">
-              <img src={immtcLogo} alt="IMMT Logo" className="h-13 w-60" />
-              <img src={lbmaLogo} alt="LBMA Logo" className="h-13 w-35" />
+              {isMobile ? (
+                <>
+                  <img src={immtcLogoMobile} alt="IMMT Logo" className="h-10 w-24" />
+                  <img src={lbmaLogoMobile} alt="LBMA Logo" className="h-10 w-20" />
+                </>
+              ) : (
+                <>
+                  <img src={immtcLogo} alt="IMMT Logo" className="h-13 w-60" />
+                  <img src={lbmaLogo} alt="LBMA Logo" className="h-13 w-35" />
+                </>
+              )}
             </div>
           </motion.div>
 
@@ -81,7 +124,7 @@ export default function Header() {
                   onClick={() => setActiveTab(label)}
                   className={`flex flex-col items-center font-bold text-lg transition ${
                     activeTab === label ? 'text-black border-b-2 border-black' : 'text-gray-400'
-                  }`}
+                    }`}
                 >
                   <img src={icon} alt={label} className="h-6 w-6 mb-1" />
                   <span>{label}</span>
@@ -101,7 +144,9 @@ export default function Header() {
                   <div className="bg-white p-4 rounded shadow mb-4 relative flex justify-between">
                     <div>
                       <p className="text-sm font-semibold">Live Buy Price</p>
-                      <p className="text-green-700 font-bold">₹{goldPrice.toLocaleString()} / gm</p>
+                      <p className="text-green-700 font-bold">
+                        {goldPrice ? `₹${goldPrice.toFixed(2)} / gm` : 'Loading...'}
+                      </p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-semibold">Purity</p>
@@ -143,7 +188,7 @@ export default function Header() {
                       disabled={!value}
                       className={`mt-4 w-full ${
                         !value ? 'bg-[#b98a30] cursor-not-allowed' : 'bg-[#b98a30]'
-                      } text-white font-bold py-2 rounded-lg border-2`}
+                        } text-white font-bold py-2 rounded-lg border-2`}
                     >
                       Buy Gold
                     </button>
@@ -184,13 +229,13 @@ export default function Header() {
                 >
                   <img src={jewelleryIcon} alt="Jewellery" className="mx-auto h-28" />
                   <p className="my-4 font-semibold text-xl">
-                    Create an account and buy digital gold for jewellery
+                    Explore our premium 24k gold jewellery collection.
                   </p>
                   <button
                     onClick={() => navigate("/signup")}
                     className="bg-[#b98a30] text-white font-bold py-2 px-6 rounded-full"
                   >
-                    Sign Up →
+                    Browse Jewellery →
                   </button>
                 </motion.div>
               )}
