@@ -5,12 +5,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import img1 from "./../../assets/Service/services/Service-1.png";
-import img2 from "./../../assets/Service/services/Service-2.png";
-import img3 from "./../../assets/Service/services/Service-3.png";
-import img4 from "./../../assets/Service/services/Service-4.png";
-import img5 from "./../../assets/Service/services/Service-5.png";
-import img6 from "./../../assets/Service/services/Service-6.png";
-import img7 from "./../../assets/Service/services/Service-7.png";
+import img2 from "./../../assets/Service/services/service-2.png";
+import img3 from "./../../assets/Service/services/service-3.png";
+import img4 from "./../../assets/Service/services/service-4.png";
+import img5 from "./../../assets/Service/services/service-5.png";
+import img6 from "./../../assets/Service/services/service-6.png";
+import img7 from "./../../assets/Service/services/service-7.png";
 
 const fallbackImg = "https://via.placeholder.com/300x200?text=Image+Missing";
 
