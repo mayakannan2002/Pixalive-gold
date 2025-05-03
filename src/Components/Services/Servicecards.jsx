@@ -4,13 +4,13 @@ import { Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import img1 from "./../../assets/Service/services/Service1.png";
-import img2 from "./../../assets/Service/services/Service2.png";
-import img3 from "./../../assets/Service/services/Service3.png";
-import img4 from "./../../assets/Service/services/Service4.png";
-import img5 from "./../../assets/Service/services/Service5.png";
-import img6 from "./../../assets/Service/services/Service6.png";
-import img7 from "./../../assets/Service/services/Service7.png";
+import img1 from "./../../assets/Service/services/Service-1.png";
+import img2 from "./../../assets/Service/services/Service-2.png";
+import img3 from "./../../assets/Service/services/Service-3.png";
+import img4 from "./../../assets/Service/services/Service-4.png";
+import img5 from "./../../assets/Service/services/Service-5.png";
+import img6 from "./../../assets/Service/services/Service-6.png";
+import img7 from "./../../assets/Service/services/Service-7.png";
 
 const fallbackImg = "https://via.placeholder.com/300x200?text=Image+Missing";
 

@@ -111,15 +111,15 @@ const DivisionPage = () => {
         {/* Left Column: Main Division Info */}
         <div className="lg:col-span-3">
           <h2 className="text-2xl font-bold mb-2">{featuredDivision.title}</h2>
-          <p className="text-sm text-gray-400 mb-4">Division Overview</p>
+          <p className="text-lg text-gray-400 mb-4">Division Overview</p>
 
           <img
             src={featuredDivision.thumb}
             alt={featuredDivision.title}
-            className="w-full md:w-2/3 lg:w-1/2 rounded-lg mb-3 mx-auto"
+            className="w-80 h-80 md:w-2/3 lg:w-1/2 rounded-lg mb-3 mx-auto"
           />
 
-          <div className="text-lg text-gray-200 leading-relaxed space-y-4">
+          <div className="text-md text-gray-200 leading-relaxed space-y-4">
             {featuredDivision.description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
