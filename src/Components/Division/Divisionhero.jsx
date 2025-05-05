@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from './../../assets/Division/divisionhero-1.png';
+import backgroundImage from './../../assets/Division/Hero-1.png';
 
 export default function Header() {
   const navigate = useNavigate();
